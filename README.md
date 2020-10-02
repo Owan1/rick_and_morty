@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* **Whenever Gem** is going to help us setting up Cron Tasks - For Importing Rick & Morty API Data
