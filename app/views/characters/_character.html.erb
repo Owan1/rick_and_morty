@@ -1,0 +1,10 @@
+<div class="col py-3 rounded-lg" style="border-radius:5px;">
+  <div class="card border-0 text-light" style="background-color: #3C3E44;">
+    <%= image_tag(character.image, class: "card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= character.name %></h5>
+      <p class="card-text">Status: <%= character.status %></p>
+      <p class="card-text">Number of Episodes: <%= character.episodes.count %></p>
+    </div>
+  </div>
+</div>

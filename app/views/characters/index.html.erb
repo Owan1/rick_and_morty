@@ -1,31 +1,23 @@
+<% if @characters.blank? %>
+  <%= image_tag('wallpapertip_rick-and-morty-wallpaper_11371.jpg', class:'img-fluid') %>
+<% else %>
 <p id="notice"><%= notice %></p>
-
-<h1>Characters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-        <td><%= character.name %></td>
-        <td><%= character.status %></td>
-        <td><%= character.image %></td>
-        <td><%= link_to 'Show', character %></td>
-        <td><%= link_to 'Edit', edit_character_path(character) %></td>
-        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row my-5">
+  <div class="col"></div>
+  <div class="col-10">
+    <% @characters.in_groups_of(5, false).each do |group| %>
+      <div class="row">
+        <% group.each do |character| %>
+        <%= render partial: "character", locals: {character: character} %>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Character', new_character_path %>
+  <div class="d-flex justify-content-center">
+    <% if !@characters.blank? %>
+      <%== pagy_bootstrap_nav(@pagy) %>
+    <% end %>
+  </div>
+  </div>
+  <div class="col"></div>
+</div>
+<% end %>
