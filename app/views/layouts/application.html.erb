@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RickAndMorty</title>
+    <title>Rick And Morty</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="background-color: #1F2632;">
+    <nav class="navbar navbar-light bg-light d-flex justify-content-center sticky-top">
+    <%= image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/799px-Rick_and_Morty.svg.png", style: "height:50px") %>
+    </nav>
+    <div class="container-fluid m-0 p-0 overflow-hidden">
+      <%= yield %>
+    </div>
   </body>
 </html>
