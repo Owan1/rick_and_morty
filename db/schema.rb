@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_10_01_222419) do
 
-  create_table "characters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "status"
     t.string "image"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2020_10_01_222419) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "characters_episodes", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "episode_id", null: false
-    t.bigint "character_id", null: false
+  create_table "characters_episodes", id: false, force: :cascade do |t|
+    t.integer "episode_id", null: false
+    t.integer "character_id", null: false
   end
 
-  create_table "episodes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "episodes", force: :cascade do |t|
     t.integer "number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
