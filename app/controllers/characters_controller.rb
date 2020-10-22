@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
   # GET /characters.json
   def index
     #@characters = Character.all
-    @pagy, @characters = pagy(Character.all)
+    @pagy, @characters = pagy(Character.includes(:episodes))
   end
 
   # GET /characters/1
